@@ -23,7 +23,9 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    { path: '~/components', prefix: 'p' },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -38,6 +40,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-webfontloader',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -55,4 +58,22 @@ export default {
       },
     },
   },
+
+  webfontloader: {
+    // add Google Fonts as "custom" | workaround required
+    custom: {
+      // families: [
+      //   'Montserrat:n2,n4',
+      //   'Fraunces:n2,n4'
+      // ],
+      urls: [
+        // for each Google Fonts add url + options you want
+        // here add font-display option
+        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'
+      ]
+    }
+  }
 }

@@ -1,5 +1,7 @@
 <template>
-  <Tutorial />
+  <div>
+    <p-dictionary />
+  </div>
 </template>
 
 <script lang="ts">
