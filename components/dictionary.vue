@@ -7,7 +7,12 @@
           <div class="flex justify-center">
             <div class=" inputSection relative">
               <img @click="load" class="absolute z-20 left-0 top-0 h-[10rem] cursor-pointer" src="images/logo_kbbi.png">
-              <input v-model="kata" class="translate-y-1/2 inputKata h-[5rem] w-full"/>
+              <div class="flex translate-y-1/2 items-center">
+              <input v-model="kata" class=" inputKata h-[5rem] w-full"/>
+                <div @click="load" v-if="kata" class="ml-3.5 bg-[#18978F] h-16 w-8 rounded-2xl cursor-pointer flex items-center justify-center">
+                  <span class="text-black font-bold">OK</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="flex flex-col">
