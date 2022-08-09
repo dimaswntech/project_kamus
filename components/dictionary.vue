@@ -15,9 +15,26 @@
             <p class="text-[90px] font-pacivico">{{ kata }}</p>
           </div>
         </div>
-        <div class="box row-span-2">2</div>
+        <div class="boks box row-span-2">
+          <ul v-for="maksud in artiData">
+            <template v-for="(arti, index) in maksud.meanings">
+              <p>{{ index + 1 }}</p>
+              <p><span class="font-bold">Part of speech :</span> {{ arti.partOfSpeech }}</p>
+              <!--              <p><span class="font-bold">Part of speech :</span> {{ arti.partOfSpeech }}</p>-->
+            </template>
+          </ul>
+        </div>
         <div class="boks box py-3 px-8 flex flex-col">
-          <p>{{arti}}</p>
+          <span class="text-[50px] mt-2 font-josefin">Phonetics</span>
+          <ul class="ml-3" v-for="maksud in arti">
+            <template v-for="(data, index) in maksud">
+              <div class="flex mb-1.5">
+                <p class="font-pacivico mr-2.5 text-xl">{{ index + 1 }}</p>
+                <p class="">{{ data.text }}</p>
+              </div>
+              <audio :src="data.audio" controls></audio>
+            </template>
+          </ul>
         </div>
       </div>
     </div>
